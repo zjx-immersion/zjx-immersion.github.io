@@ -1,696 +1,200 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="cn">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>软件开发，架构设计，Cloud Native, Training, 全栈开发</title>
+  <meta name="author" content="钟健鑫">
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="developer, engineering, agile, coding, architecture" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="融码一身">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="融码一身">
-<meta property="og:locale" content="cn">
-<meta property="article:author" content="钟健鑫">
-<meta name="twitter:card" content="summary">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>融码一身</title>
   
-
-
-
-
-
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="软件开发，架构设计，Cloud Native, Training, 全栈开发"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="软件开发，架构设计，Cloud Native, Training, 全栈开发" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="cn">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <nav class="navbar">
+  <div class="nav-container">
+  <div class="nav navbar-nav navbar-left">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">Actor of Developer 的文章</a>
+    </div>
     
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">融码一身</span>
-        <span class="logo-line-after"><i></i></span>
+  </div>
+  <div id="site_search" class="">
+  <input type="text" id="local-search-input" name="q" placeholder="search" class="form-control"/>
+</div>
+<div id="local-search-result"></div>
+
+
+  <div class="nav navbar-nav navbar-right">
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <svg class="i-link" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15"></path>
+        </svg>
+      </a>
+      <base href="/">
+      <ul class="dropdown-content">
+        
+          <div>
+            <a href="/links.html">
+        友情链接
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
+     
+          <div>
+            <a href="https://github.com/zjx-immersion/" target="_blank" rel="noopener">
+        Github
+      </a>
+    </div>
+     
+          <div>
+            <a href="https://www.zhihu.com/people/zhong-jian-xin-86" target="_blank" rel="noopener">
+        知乎
+      </a>
+    </div>
+     
+          <div>
+            <a href="/">
+        关于我
+      </a>
+    </div>
+     
     </ul>
-  
-
-  
+    </div>
+    <div class="archives"><a href="/archives">
+      <svg class="i-archive" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M4 10 L4 28 28 28 28 10 M2 4 L2 10 30 10 30 4 Z M12 15 L20 15"></path>
+      </svg>
+    </a></div>
+  </div>
+  </div>
 </nav>
 
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
+<ul class="posts">
   
-
+    
+<li class="post-item">
   
   
+    <h1 class="index-title">
+        <a href="/2020/03/13/搞线上培训？不懂这些别后悔/">
+            搞线上培训？不懂这些别后悔
+        </a>
+    </h1>
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+  <div class="excerpt">
   
+    内容概要
+闲聊: 在线培训为啥效果令人担忧
+线上培训会遇到的问题
+这些问题的本质时什么 - 学员视角支撑
+学员的学习环和认知过程
+在线授课的关键原则
+
+疫情之下，优秀的人和事似乎都被放大了，如  上海传染病专家  张文宏，平时功底很厚，在防
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/%E6%90%9E%E7%BA%BF%E4%B8%8A%E5%9F%B9%E8%AE%AD%EF%BC%9F%E4%B8%8D%E6%87%82%E8%BF%99%E4%BA%9B%E5%88%AB%E5%90%8E%E6%82%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="钟健鑫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="融码一身">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/13/%E6%90%9E%E7%BA%BF%E4%B8%8A%E5%9F%B9%E8%AE%AD%EF%BC%9F%E4%B8%8D%E6%87%82%E8%BF%99%E4%BA%9B%E5%88%AB%E5%90%8E%E6%82%94/" itemprop="url">搞线上培训？不懂这些别后悔</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-13T17:16:54+08:00">
-                2020-03-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="内容概要"><a href="#内容概要" class="headerlink" title="内容概要"></a>内容概要</h2><ul>
-<li>闲聊: 在线培训为啥效果令人担忧</li>
-<li>线上培训会遇到的问题</li>
-<li>这些问题的本质时什么 - 学员视角支撑</li>
-<li>学员的学习环和认知过程</li>
-<li>在线授课的关键原则</li>
-</ul>
-<p>疫情之下，优秀的人和事似乎都被放大了，如 <a href="http://www.baidu.com/link?url=WiZNKeLaNdvapbu5xxjh23RrBLjVwT-cQqO9eJlTOy28H4xwjiC7A_g-GqySdCObY-w_vFHGO-yK_g5FTItF1FkeeeYMHpGovVGxWrTUQim" target="_blank" rel="noopener"> 上海传染病专家</a>  张文宏，平时功底很厚，在防疫领域做的很扎实，目前在网上那是被全民热捧。但也能看到非常多平时就做的不到位的事儿更是被无限放大，大到无处躲避。不得不感叹一下，疫情就像是照妖镜（好想哪里不爽照哪里…），基本功是否扎实，照一照基本就能现原形。</p>
-<p>今天，我们来聊聊想让线上培训能达到预期效果，会面对哪些问题？这些问题背后的本质是什么？据我的经验，解决了这些主要问题，培训质量至少能评80分，剩下20分如何做，请期待一下后续的文章。</p>
-<p>最近很多公司和学校不得不改线下培训为线上培训，效果自然是不用说，大多都很惨。总的来说惨的里面存在两种情况：</p>
-<ul>
-<li><p>一种是同样的培训在线下本就做的不够扎实，放线上就好似罩了一个照妖镜，很多问题都显现出来了；</p>
-</li>
-<li><p>另一种是把线上培训当成网红直播一样，是个课就往线上放，只要我肚子里有货，期待着把货推出去了，听课的学员好像就都能理解似得；</p>
-</li>
-</ul>
-<p>以上两种情况都只能得到一种培训结果：听天由命！其形式基本与播新闻是类似的，但是写新闻的编辑可是学过传播学的，一听就知道短短的新闻要让观众感兴绝对不简单。但让学员连着看一天，甚至几天的新闻，我想还是会比较难受的。</p>
-<h2 id="线上培训会遇到的问题"><a href="#线上培训会遇到的问题" class="headerlink" title="线上培训会遇到的问题"></a>线上培训会遇到的问题</h2><p>最近和不少朋友和客户都在讨论线上培训怎么做，大家对线上培训的效果多多少少都持有怀疑的态度，但基本都是主观感觉或一些外在可见现象的担心，很难能说出效果不好的本质问题是什么。</p>
-<p>通过我的观察，发现很多效果差的培训基本都会存在以下的问题：</p>
-<p>●      对培训有不切实际期望</p>
-<p>这几年我在IT领域做人才赋能，包括初，中级人员软件开发能力培养，高级人员的软件架构设计，以及敏捷，DevOps等相关理念和实践的培训。大部分培训的参与者和组织方都认为通过2天，甚至1天的培训，学员应该学会…  能在工作中…等，我通常会直接告诉对方，短短几天的在线培训不能让学员会什么，其实原因有很多，大家可以回忆下自己参加过的培训，有哪一项技能是你在培训中学会的？ 我觉得最重要的两个原因是 ：1. 时间太短，练习量不够； 2.脱离真实场景，精心设计的培训，距离在实际中应用还存在一段爬坡上坎，掉坑里的过程。</p>
-<p>●      学员学习时不专心，同时做了其它事儿</p>
-<p>这里面存在很多中情况，学员不专心不一定是学员的态度问题，也有很大一部分是因为授课过程无法吸引他，或者是在处理紧急工作。更重要的是我们很难隔着屏幕发现他是否在认真跟课。</p>
-<p>●      学员听了很多道理，眼睛会了，手不会</p>
-<p>这个是很多培训的通病，几百页的PPT，都可以写成书了。纸上谈兵终觉浅，没有给学员充足的练习机会，即时再丰富，前沿的内容，也很难帮助学员落地。虽然我相信很多培训是能给学员启发的，甚至醍醐灌顶的观点，但依然是一件投入产出比很低的事儿。</p>
-<p>●      老师讲了很多自己体系化内容，但不知道学员是否理解</p>
-<p>这个也是一个我可以举出无数案例的问题，我不否认老师的知识体系很棒，但往往在培训的时候很自然的就带上了专家的帽子，再加上对着屏幕讲，基本就进入了录音模式。现实中我把这叫做自嗨,自己感觉讲的行云流水，学员连问题都还提不出来…</p>
-<p>●      学员不敢提问</p>
-<p>这是对于大多数学员都存在的问题，怕犯错，怕出丑，但是一旦发现大家都和自己一样存在困惑，便也就不会不敢了。</p>
-<p>●      老师问的问题  =  没有问问题</p>
-<p>很多培训中，老师的提问完全遵循以下的套路： 大家有没有问题？大家理解了吗？….  这种提问本身属于封闭式问题，用对了场景还是不错的，但我观察到的是一天的培训，每个主题完了，就会照此问一下。而且现场大多数情况是无人应答，很快就进入下一个主题。</p>
-<p>●      老师抛出了很多新概念，感觉自己更晕了</p>
-<p>一些培训中，老师为了讲明白一个概念，用了更多学员不知道的名词，此时学员基本是问题都不知道改如何提。当然有时遇到比较较真的学员，会直接站起来说：“老师你能给我说说这个概念是什么吗？ 刚你讲了那么久，我完全听不懂”。这种尴尬的场面一旦出现，这次的培训很可能就废了。</p>
-<p>●      从众效应，导致学员隐瞒真实反馈</p>
-<p>线简单介绍下”阿希从众实验“：6个志愿者，5个托儿。画有一条线的卡片，让志愿者判断它另一张卡片上的三条线的哪一条等长。这5有个托儿故意异口同声的说出错误答案，于是许多志愿者开始迷惑，最后的结果是，75%的志愿者被带偏，至少做了一次从众的错误判断。应该能差到我想表达什么了吧？ 当老师说：“听懂了的同学请举手”，只要有一部分人快速举手了，最后的结果往往是所有人都举手了（假设一个培训班的人数在30人左右）</p>
-<h2 id="问题的本质"><a href="#问题的本质" class="headerlink" title="问题的本质"></a>问题的本质</h2><p> 从上面的问题和现象来分析，排除第一个仅仅只需要勇气来面对。其它的问题从本质上来看基本可以归为：<br>●      老师缺乏学员视角<br>●      学员注意力难以管理<br>●      学员与老师双向反馈缺失或延迟<br>●      学员练得太少，听得太多</p>
-<p>从这几个问题的本质出发，我们再来看看线上培训会遇到的问题其实与线下培训是一样的，但是信息传递的信道改变了，学员与老师，学员与学员都没法面对面及时沟通互动，所以也加大了注意力管理和反馈获取的难度。再给出解决办法之前，我们先一起看看学员是如何学习的？</p>
-<h2 id="学员是如何学习的？"><a href="#学员是如何学习的？" class="headerlink" title="学员是如何学习的？"></a>学员是如何学习的？</h2><p> <img src="imgs/%E6%90%9E%E7%BA%BF%E4%B8%8A%E5%9F%B9%E8%AE%AD-1.png" alt=""></p>
-<p>从上图的学习环来看，学员无论学习什么知识，都会有一个兴趣或动力推着他开始学习；接着便会开始找各种资料书籍；然后按自己的理解去加工处理这些知识，初步消化；再接着思考总结，形成自己能够理解的概念或得出结论；最后就是跃跃欲试的想付诸实践和尝试。</p>
-<p>下图，针对学员学习过程的五个关键节点，我们都应该设计对应的教学步骤，在培训中帮助学员尽可能多的完成学习的闭环，建立起未来在实际场景中去落地的台阶。（其中推动实践发生，更多指培训中的学员练习）</p>
-<p><img src="imgs/%E6%90%9E%E7%BA%BF%E4%B8%8A%E5%9F%B9%E8%AE%AD-2.png" alt=""><br>基于如上的思考，我们是否可以得出一个假设？只要学员能流畅的完成一个个学习环，那么就能够理解培训课中所传达的知识或实践，并能获得后续自己去持续学习和尝试的基础。答案是不一定，但是从单个环的角度出发，是没问题的。因为一旦设计多个环，就会涉及到学员连续性学习设计的问题，这需要我们去构建“流”式的学习/练习过程（期待下后续的文章吧）。</p>
-<h2 id="在线授课的关键原则"><a href="#在线授课的关键原则" class="headerlink" title="在线授课的关键原则"></a>在线授课的关键原则</h2><p>前面铺垫了这么多，其实最重要点已经告诉大家了，如果理解了问题，知道了做在线培训所面临的未知是什么，办法应该会有很多，我在这里给一个我最喜欢的方式，很简单几个字：练习驱动教学。通过精心设计的练习，让学员通过做中学的方式，逐步把未知的知识转化为自己脑中有画面感的概念/实践/技能，并持续通过练习来呗强化和增量的拓展。</p>
-<p>针对咱们要解决的培训问题的本质，希望以下我总结的原则能够给你带来启发</p>
-<h3 id="在线培训适用9原则"><a href="#在线培训适用9原则" class="headerlink" title="在线培训适用9原则"></a>在线培训适用9原则</h3><ul>
-<li>经过考验的工具：多人视频软件(通话质量，多个房间，桌面分享（屏上做标记），录屏)，多人协作软件（实施画图，写字），keynoye/ppt（展示提前准备的内容，简单图形画图）</li>
-</ul>
-<ul>
-<li>创造学习阻力：让学员经历躺坑  → 独立思考/理解-&gt; 解决问题 → 实验-&gt;  总结 的过程，自己的出结论</li>
-</ul>
-<ul>
-<li>小步教学，控制变量单一：当教授/学员练习某一知识时，确保不会有其它新的概念和知识出现在这个过程中</li>
-</ul>
-<ul>
-<li>场景迁移：演示一个场景，让学员练习另外一个场景</li>
-</ul>
-<ul>
-<li>防止自嗨行为：与学员能学什么相比，自己要讲什么一点儿也不重要</li>
-</ul>
-<ul>
-<li>创造学员即时反馈：不要灌输，要时刻知道学员学的如何，有什么问题，才能针对性的进行适应性教学</li>
-</ul>
-<ul>
-<li>防止从众效应：设置阶段性的 具体的问题，真实反应学员状态</li>
-</ul>
-<ul>
-<li>实时评估：  评估不一定需要试卷，精心设计的问题和小调查，都是评估当前学员学习情况的好办法，不要蒙着眼睛教学</li>
-</ul>
-<ul>
-<li><p>速度分层：针对教学内容，教学的量和速度需要区分：</p>
-<ol>
-<li><p>专用工具 技术 概念和原则  -  此层知识的迭代速度很快，帮助学员理解， 能上手应用即可；</p>
-</li>
-<li><p>技能和态度  -  此层变化速度较慢，一般是一些底层的基本能力，帮助学员锻炼肌肉记忆 ，形成条件反射 ；</p>
-</li>
-<li><p>基础结构（文化，核心价值观&amp;人格特质）-   此层基本不变，主要是设计一个人底层的 思考框架 认知方法 做事风格，很难通过短期培训获得，需要考虑大环境的影响；</p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>爱因斯坦如是说道：“提出一个问题往往比解决一个问题更重要，因为解决问题也许仅能是一个数学上或实验室上的技能而已。而提出新的问题、新的可能性，从新的角度去看旧的问题，都需要有创造性的想象力，而且标志着科学的真正进步。”</p>
-<p>当然我的观点，可能离科学的真正进步还差很远，但也期望能促进行业的进步，知识消费的时代，随处可见的知识平台都正在变成各种知识搜索引擎，泛泛而谈的知识培训，只能是广撒网，难以深入。我期望它们能够让学员具备开始实践的属性，帮助学员解决实际问题，给方法，聊细节，并推动学员持续学习和落地。</p>
-<p>这是我第一次尝试分享非IT技术类的观点，文章的9个原则，每一个都可以展开来说，如果你觉得有帮助，我会在之后的文章中一一道来。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+  <a href="/2020/03/13/搞线上培训？不懂这些别后悔/">
+    more
+  </a>
   </div>
-  
-  
-  
-  </article>
+  <div class="index-meta">
+    <time datetime="2020-03-13T09:16:54.000Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2020-03-13
+</time>
+
+
+
 
 
     
-  </section>
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/tags/技术培训/">技术培训</a>
+
+
+  </div>
+</li>
+<hr>
+
+
+
+
 
   
+</ul>
+<ul class="pager">
+    <span class="page-number current">1</span>
+</ul>
 
 
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">钟健鑫</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">钟健鑫</span>
-
-  
+  <footer class="page-footer"><div class="clearfix">
 </div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © zjx 2019-2020
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/zjx-immersion/" target="_blank" rel="noopener">
+        Repos of my
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
